@@ -5,7 +5,8 @@ proposing reversible viewport changes, and comparing headless frame evaluation.
 It uses Blender's local `bpy` API in a separate background process. No network
 service or Python package dependency is required.
 
-<img width="2592" height="1458" alt="BlendBoost_Img" src="https://github.com/user-attachments/assets/e60c4691-3311-48c8-966c-afed71a0c2d5" />
+<img width="2592" height="1458" alt="BlendBoost_Img" src="https://github.com/user-attachments/assets/e60c4691-3311-48c8-966c-afed71a0c2d5" /> 
+<!--<img width="1920" height="1080" alt="BlendBoost_Img2" src="https://github.com/user-attachments/assets/720c8c8e-58f6-4729-86f2-e399ff815fac" /> -->
 
 ## Tools
 
