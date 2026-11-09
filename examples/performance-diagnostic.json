@@ -1,0 +1,192 @@
+{
+  "ok": true,
+  "report_version": 1,
+  "source": {
+    "blend_file": "C:\\example\\blendboost-fixture.blend",
+    "scene": "Scene",
+    "saved_frame": 1
+  },
+  "measured_metrics": {
+    "object_count": 3,
+    "object_counts_by_type": {
+      "CAMERA": 1,
+      "LIGHT": 1,
+      "MESH": 1
+    },
+    "mesh_count": 1,
+    "base_polygon_count": 6,
+    "evaluated_polygon_count": 24,
+    "modifier_counts_by_type": {
+      "SUBSURF": 1
+    },
+    "heaviest_meshes": [
+      {
+        "name": "Cube",
+        "base_polygons": 6,
+        "evaluated_polygons": 24,
+        "hidden_from_viewport": false,
+        "modifier_count": 1
+      }
+    ],
+    "collections": [
+      {
+        "name": "Scene Collection",
+        "path": "Scene Collection",
+        "direct_object_count": 0,
+        "direct_mesh_count": 0,
+        "direct_evaluated_polygons": 0,
+        "collection_hide_viewport": false
+      },
+      {
+        "name": "Collection",
+        "path": "Scene Collection/Collection",
+        "direct_object_count": 3,
+        "direct_mesh_count": 1,
+        "direct_evaluated_polygons": 24,
+        "collection_hide_viewport": false
+      }
+    ],
+    "viewports": [
+      {
+        "screen": "Animation",
+        "area_index": 2,
+        "screen_is_active": false,
+        "shading_type": "SOLID",
+        "overlays_enabled": false,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "Animation",
+        "area_index": 4,
+        "screen_is_active": false,
+        "shading_type": "SOLID",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "Geometry Nodes",
+        "area_index": 2,
+        "screen_is_active": false,
+        "shading_type": "SOLID",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "Layout",
+        "area_index": 3,
+        "screen_is_active": true,
+        "shading_type": "SOLID",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "Modeling",
+        "area_index": 2,
+        "screen_is_active": false,
+        "shading_type": "SOLID",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "Scripting",
+        "area_index": 5,
+        "screen_is_active": false,
+        "shading_type": "SOLID",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "Sculpting",
+        "area_index": 2,
+        "screen_is_active": false,
+        "shading_type": "SOLID",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "Shading",
+        "area_index": 5,
+        "screen_is_active": false,
+        "shading_type": "MATERIAL",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "Texture Paint",
+        "area_index": 3,
+        "screen_is_active": false,
+        "shading_type": "SOLID",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      },
+      {
+        "screen": "UV Editing",
+        "area_index": 3,
+        "screen_is_active": false,
+        "shading_type": "SOLID",
+        "overlays_enabled": true,
+        "cavity_enabled": false,
+        "shadows_enabled": false
+      }
+    ],
+    "active_screen": "Layout",
+    "simplify_enabled": false,
+    "simplify_subdivision": 6
+  },
+  "estimated_metrics": {
+    "scene_referenced_image_count": 0,
+    "scene_referenced_uncompressed_image_bytes": 0,
+    "largest_scene_referenced_images": [],
+    "image_estimate_method": "width \u00d7 height \u00d7 channels \u00d7 (4 bytes if float, otherwise 1 byte); one decoded image buffer only"
+  },
+  "findings": [
+    {
+      "category": "viewport_simplify",
+      "subject": "Scene",
+      "severity": "medium",
+      "severity_score": 42,
+      "measured_evidence": {
+        "simplify_enabled": false,
+        "active_subdivision_modifiers": 1
+      },
+      "estimated_impact": "Potential viewport evaluation reduction; not benchmarked.",
+      "explanation": "Render Simplify is off while viewport subdivision modifiers are active.",
+      "recommendation": "Consider enabling Simplify for playback and setting a conservative viewport subdivision cap; restore it for quality checks."
+    }
+  ],
+  "omitted_finding_count": 0,
+  "severity_method": {
+    "type": "rule_based_estimate",
+    "score_ranges": {
+      "critical": "90-100",
+      "high": "70-89",
+      "medium": "40-69",
+      "low": "0-39"
+    },
+    "examples": [
+      "Mesh polygon thresholds: 50k, 100k, 200k, 500k evaluated polygons.",
+      "Decoded image estimate thresholds: 16, 64, 256 MiB per scene-referenced image.",
+      "Collection flag: at least 200k direct evaluated polygons and 25% of scene total.",
+      "Object-count collection flag: at least 100 direct objects and 20% of scene objects."
+    ]
+  },
+  "assessment_limits": [
+    "Severity is a threshold heuristic, not a measured frame-time, RAM, or VRAM benchmark.",
+    "Evaluated polygons use the saved frame's viewport dependency graph for mesh objects; generated instances are not expanded.",
+    "Polygon totals include hidden scene mesh objects; hiding alone does not remove their polygons from these totals.",
+    "Image estimates exclude mipmaps, multiple buffers, tiled or animated frames, and actual GPU residency.",
+    "Only saved 3D View settings are inspected; unsaved UI changes are not included.",
+    "Heavy or hidden geometry is an optimization candidate, not proof it is unnecessary."
+  ],
+  "example_note": "Measured on a generated Blender fixture; paths anonymized. Not a user scene.",
+  "blend_file": "C:\\example\\blendboost-fixture.blend"
+}

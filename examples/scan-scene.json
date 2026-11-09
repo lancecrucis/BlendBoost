@@ -1,0 +1,45 @@
+{
+  "ok": true,
+  "blend_file": "C:\\example\\blendboost-fixture.blend",
+  "scene": "Scene",
+  "frame": 1,
+  "object_count": 3,
+  "object_counts_by_type": {
+    "CAMERA": 1,
+    "LIGHT": 1,
+    "MESH": 1
+  },
+  "mesh_count": 1,
+  "base_polygon_count": 6,
+  "evaluated_polygon_count": 24,
+  "modifier_count": 1,
+  "modifier_counts_by_type": {
+    "SUBSURF": 1
+  },
+  "objects_with_modifiers": [
+    {
+      "object": "Cube",
+      "modifiers": [
+        {
+          "name": "Test Subdivision",
+          "type": "SUBSURF"
+        }
+      ]
+    }
+  ],
+  "top_10_heaviest_meshes": [
+    {
+      "name": "Cube",
+      "base_polygons": 6,
+      "evaluated_polygons": 24,
+      "modifiers": [
+        {
+          "name": "Test Subdivision",
+          "type": "SUBSURF"
+        }
+      ]
+    }
+  ],
+  "evaluation": "viewport geometry at saved current frame; all scene mesh objects including hidden ones; instances not expanded",
+  "example_note": "Measured on a generated Blender fixture; paths anonymized. Not a user scene."
+}

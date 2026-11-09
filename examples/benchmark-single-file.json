@@ -1,0 +1,124 @@
+{
+  "ok": true,
+  "report_version": 1,
+  "measurement_type": "headless_frame_evaluation",
+  "interactive_viewport_fps_measured": false,
+  "conditions": {
+    "frame_start": 1,
+    "frame_end": 3,
+    "frame_step": 1,
+    "sampled_frames": [
+      1,
+      2,
+      3
+    ],
+    "warmup_frames_per_run": 3,
+    "passes_per_run": 3,
+    "blender_executable": "C:\\Program Files\\Blender Foundation\\Blender 5.2\\blender.exe",
+    "same_host_and_executable": true,
+    "host_system": "Windows",
+    "cpu_count": 12,
+    "method": "time.perf_counter around scene.frame_set, evaluated dependency graph access, and visible mesh polygon readback"
+  },
+  "baseline": {
+    "ok": true,
+    "file": "C:\\example\\blendboost-fixture.blend",
+    "scene": "Scene",
+    "view_layer": "ViewLayer",
+    "blender_version": "5.2.3 LTS",
+    "samples": [
+      {
+        "pass_index": 1,
+        "frame": 1,
+        "elapsed_ms": 0.015199999324977398,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      },
+      {
+        "pass_index": 1,
+        "frame": 2,
+        "elapsed_ms": 0.013900000340072438,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      },
+      {
+        "pass_index": 1,
+        "frame": 3,
+        "elapsed_ms": 0.012700000297627412,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      },
+      {
+        "pass_index": 2,
+        "frame": 1,
+        "elapsed_ms": 0.012599999536178075,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      },
+      {
+        "pass_index": 2,
+        "frame": 2,
+        "elapsed_ms": 0.01230000088980887,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      },
+      {
+        "pass_index": 2,
+        "frame": 3,
+        "elapsed_ms": 0.0121000011858996,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      },
+      {
+        "pass_index": 3,
+        "frame": 1,
+        "elapsed_ms": 0.012200000128359534,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      },
+      {
+        "pass_index": 3,
+        "frame": 2,
+        "elapsed_ms": 0.012200000128359534,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      },
+      {
+        "pass_index": 3,
+        "frame": 3,
+        "elapsed_ms": 0.012500000593718141,
+        "visible_mesh_objects": 1,
+        "visible_evaluated_polygons": 24
+      }
+    ],
+    "file_sha256": "f42695010b37e480b21f92a62ccbff3a0aec8caaf809716c4680eb2a9bfd9ec0",
+    "statistics": {
+      "sample_count": 9,
+      "average_evaluation_ms": 0.0129,
+      "median_evaluation_ms": 0.0125,
+      "p95_evaluation_ms": 0.0152,
+      "p95_method": "nearest_rank",
+      "outlier_count_over_3x_median": 0,
+      "estimated_headless_evaluation_frames_per_second": 77787.3795
+    },
+    "typical_statistics": {
+      "method": "median of repeated samples for each frame, then average across frames",
+      "frame_count": 3,
+      "average_per_frame_median_ms": 0.0125,
+      "estimated_typical_headless_frames_per_second": 80213.9016
+    },
+    "blend_file": "C:\\example\\blendboost-fixture.blend"
+  },
+  "optimized": null,
+  "comparison": null,
+  "plain_language_summary": "The saved scene averaged 0.01 ms per frame in this headless evaluation test. This is not interactive viewport FPS.",
+  "limits": [
+    "Estimated throughput is 1000 / average headless evaluation milliseconds; it is not interactive viewport FPS.",
+    "Python object traversal and polygon readback are included in each timed sample; no display drawing or rendering is measured.",
+    "A single sequential run per file is sensitive to cache, thermal, and background-load variation; repeat for stronger evidence.",
+    "Raw statistics retain timing spikes. Typical statistics use the median of repeated samples per frame; neither is viewport FPS.",
+    "Only visible mesh objects in the chosen view layer are read back; generated instances and non-mesh drawing are not counted.",
+    "Frame changes occur only in memory; input .blend files are never saved."
+  ],
+  "example_note": "Measured on one generated Blender fixture on this machine; paths anonymized. No optimized comparison or viewport FPS measured."
+}
