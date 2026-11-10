@@ -57,6 +57,7 @@ def _validate(args):
     step = _integer(args.get("frame_step", 1), "frame_step", 1, 10000)
     warmup = _integer(args.get("warmup_frames", 3), "warmup_frames", 1, 100)
     passes = _integer(args.get("passes", 3), "passes", 1, 10)
+    rounds = _integer(args.get("rounds", 1), "rounds", 1, 4)
     timeout = _integer(args.get("timeout_seconds", 300), "timeout_seconds", 10, 900)
     if end < start:
         raise ValueError("frame_end must be greater than or equal to frame_start.")
@@ -92,7 +93,7 @@ def _validate(args):
 
     return {"baseline": baseline, "optimized": optimized, "frames": frames,
             "start": start, "end": end, "step": step, "warmup": warmup,
-            "passes": passes, "timeout": timeout, "scene_name": scene_name,
+            "passes": passes, "rounds": rounds, "timeout": timeout, "scene_name": scene_name,
             "view_layer_name": view_layer_name, "executable": executable,
             "report_file": report_file}
 
@@ -191,10 +192,10 @@ def _plain_summary(baseline, optimized, comparison):
         return (f"The saved scene averaged {before:.2f} ms per frame in this headless evaluation test. "
                 "This is not interactive viewport FPS.")
     after = optimized["statistics"]["average_evaluation_ms"]
-    if comparison.get("raw_and_typical_direction_conflict"):
+    if comparison.get("verdict") == "inconclusive" or comparison.get("raw_and_typical_direction_conflict"):
         return (f"The original averaged {before:.2f} ms and the optimized copy {after:.2f} ms per frame, "
-                "but raw and repeated-frame typical results disagree. Treat the comparison as inconclusive; "
-                "inspect outliers and repeat the test. This is not interactive viewport FPS.")
+                "but the repeated-test evidence does not meet the consistency threshold. Treat the comparison as inconclusive; "
+                "inspect the per-round results and repeat the test. This is not interactive viewport FPS.")
     reduction = comparison["average_evaluation_time_reduction_percent"]
     if reduction is None:
         change = "The average-time percentage could not be calculated."
@@ -205,6 +206,24 @@ def _plain_summary(baseline, optimized, comparison):
     warning = " One or more timing outliers occurred; repeat the test before making a firm claim." if comparison.get("outlier_warning") else ""
     return (f"The original averaged {before:.2f} ms and the optimized copy averaged {after:.2f} ms "
             f"per frame in the same headless test. {change}{warning} This is not interactive viewport FPS.")
+
+
+def _trial_verdict(rounds):
+    """Conservative practical threshold, not a statistical significance test."""
+    if len(rounds) < 2:
+        return "inconclusive"
+    signs = []
+    for before, after in rounds:
+        comparison = _compare(before, after)
+        reduction = comparison["average_evaluation_time_reduction_percent"]
+        typical = comparison["typical_average_time_reduction_percent"]
+        difference = before["statistics"]["average_evaluation_ms"] - after["statistics"]["average_evaluation_ms"]
+        if (reduction is None or typical is None or comparison["outlier_warning"]
+                or abs(difference) < 0.1 or abs(reduction) < 5 or abs(typical) < 5
+                or (reduction > 0) != (typical > 0)):
+            return "inconclusive"
+        signs.append(reduction > 0)
+    return "improvement" if all(signs) else "regression" if not any(signs) else "inconclusive"
 
 
 def _export_new_json(report, path):
@@ -233,20 +252,31 @@ def run(args):
         if config["optimized"]:
             source_hashes["optimized"] = _sha256(config["optimized"])
 
-        baseline = _subprocess_benchmark(config["baseline"], config)
-        if not baseline.get("ok"):
-            baseline["stage"] = "baseline"
-            return json.dumps(baseline)
-        optimized = None
-        if config["optimized"]:
-            optimized = _subprocess_benchmark(config["optimized"], config)
-            if not optimized.get("ok"):
-                optimized["stage"] = "optimized"
-                return json.dumps(optimized)
-            if (baseline["blender_version"] != optimized["blender_version"] or
-                    baseline["scene"] != optimized["scene"] or
-                    baseline["view_layer"] != optimized["view_layer"]):
-                return _error("incomparable_scenes", "Blender version, scene, or view layer differed between runs.")
+        runs = {"baseline": [], "optimized": []}
+        run_order = []
+        identity = None
+        for round_index in range(config["rounds"]):
+            order = ["baseline", "optimized"] if config["optimized"] else ["baseline"]
+            if round_index % 2:
+                order.reverse()
+            run_order.append(order)
+            for label in order:
+                result = _subprocess_benchmark(config[label], config)
+                if not result.get("ok"):
+                    result["stage"] = label
+                    return json.dumps(result)
+                current = (result["blender_version"], result["scene"], result["view_layer"])
+                if identity is not None and current != identity:
+                    return _error("incomparable_scenes", "Blender version, scene, or view layer differed between runs.")
+                identity = current
+                for sample in result["samples"]:
+                    sample["round_index"] = round_index + 1
+                result["statistics"] = _summary(result["samples"])
+                result["typical_statistics"] = _typical_summary(result["samples"])
+                runs[label].append(result)
+        baseline = {**runs["baseline"][0], "samples": [s for r in runs["baseline"] for s in r["samples"]]}
+        optimized = ({**runs["optimized"][0], "samples": [s for r in runs["optimized"] for s in r["samples"]]}
+                     if config["optimized"] else None)
 
         if _sha256(config["baseline"]) != source_hashes["baseline"] or (
             config["optimized"] and _sha256(config["optimized"]) != source_hashes["optimized"]
@@ -260,6 +290,11 @@ def run(args):
                 result["typical_statistics"] = _typical_summary(result["samples"])
 
         comparison = _compare(baseline, optimized) if optimized else None
+        if comparison is not None:
+            pairs = list(zip(runs["baseline"], runs["optimized"]))
+            comparison["verdict"] = _trial_verdict(pairs)
+            comparison["verdict_method"] = "At least two rounds, each agreeing in raw and typical direction, >=5% and >=0.1ms mean difference, no >3x-median outliers. Heuristic, not statistical significance."
+            comparison["per_round"] = [_compare(b, a) for b, a in pairs]
         report = {
             "ok": True,
             "report_version": 1,
@@ -270,6 +305,7 @@ def run(args):
                 "frame_step": config["step"], "sampled_frames": config["frames"],
                 "warmup_frames_per_run": config["warmup"],
                 "passes_per_run": config["passes"],
+                "rounds": config["rounds"], "run_order": run_order,
                 "blender_executable": config["executable"],
                 "same_host_and_executable": True,
                 "host_system": platform.system(), "cpu_count": os.cpu_count(),
@@ -282,7 +318,7 @@ def run(args):
             "limits": [
                 "Estimated throughput is 1000 / average headless evaluation milliseconds; it is not interactive viewport FPS.",
                 "Python object traversal and polygon readback are included in each timed sample; no display drawing or rendering is measured.",
-                "A single sequential run per file is sensitive to cache, thermal, and background-load variation; repeat for stronger evidence.",
+                "Multiple rounds alternate original/copy order to reduce order bias; cache, thermal, and background-load variation remain possible.",
                 "Raw statistics retain timing spikes. Typical statistics use the median of repeated samples per frame; neither is viewport FPS.",
                 "Only visible mesh objects in the chosen view layer are read back; generated instances and non-mesh drawing are not counted.",
                 "Frame changes occur only in memory; input .blend files are never saved.",
@@ -332,6 +368,9 @@ def _benchmark_in_blender(request):
         for index in range(request["warmup"]):
             _evaluate_frame(scene, view_layer, frames[index % len(frames)])
         for pass_index in range(request["passes"]):
+            # Ensure the first timed sample is a real frame change, even when
+            # warm-up ended on the first frame. Not included in the timing.
+            _evaluate_frame(scene, view_layer, frames[-1])
             for frame in frames:
                 start = time.perf_counter()
                 visible_count, polygons = _evaluate_frame(scene, view_layer, frame)

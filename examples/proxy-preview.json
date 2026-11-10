@@ -1,0 +1,261 @@
+{
+  "ok": true,
+  "mode": "optimization_preview",
+  "source_file": "C:\\BlendBoostDemo\\demo.blend",
+  "source_sha256": "604580a08ee933f3f59310441d82a09bc6540baf6d35501f1c057a2a1d214b36",
+  "output_file": "C:\\BlendBoostDemo\\demo_working.blend",
+  "scene": "Scene",
+  "plan_id": "386d4e78947c30f026ccb87fe90dbe3260c58d0d6b485e76a42555697df3f781",
+  "actions": [
+    {
+      "id": "static_collection_proxy:c5da42199b8e7235",
+      "kind": "static_collection_proxy",
+      "target": {
+        "scene": "Scene",
+        "objects": [
+          "Platform 000",
+          "Platform 001",
+          "Platform 002",
+          "Platform 003",
+          "Platform 004",
+          "Platform 005",
+          "Platform 006",
+          "Platform 007",
+          "Platform 008",
+          "Platform 009",
+          "Platform 010",
+          "Platform 011",
+          "Platform 012",
+          "Platform 013",
+          "Platform 014",
+          "Platform 015",
+          "Platform 016",
+          "Platform 017",
+          "Platform 018",
+          "Platform 019",
+          "Platform 020",
+          "Platform 021",
+          "Platform 022",
+          "Platform 023",
+          "Platform 024",
+          "Platform 025",
+          "Platform 026",
+          "Platform 027",
+          "Platform 028",
+          "Platform 029",
+          "Platform 030",
+          "Platform 031",
+          "Platform 032",
+          "Platform 033",
+          "Platform 034",
+          "Platform 035",
+          "Platform 036",
+          "Platform 037",
+          "Platform 038",
+          "Platform 039",
+          "Platform 040",
+          "Platform 041",
+          "Platform 042",
+          "Platform 043",
+          "Platform 044",
+          "Platform 045",
+          "Platform 046",
+          "Platform 047",
+          "Platform 048",
+          "Platform 049",
+          "Platform 050",
+          "Platform 051",
+          "Platform 052",
+          "Platform 053",
+          "Platform 054",
+          "Platform 055",
+          "Platform 056",
+          "Platform 057",
+          "Platform 058",
+          "Platform 059",
+          "Platform 060",
+          "Platform 061",
+          "Platform 062",
+          "Platform 063",
+          "Platform 064",
+          "Platform 065",
+          "Platform 066",
+          "Platform 067",
+          "Platform 068",
+          "Platform 069",
+          "Platform 070",
+          "Platform 071",
+          "Platform 072",
+          "Platform 073",
+          "Platform 074",
+          "Platform 075",
+          "Platform 076",
+          "Platform 077",
+          "Platform 078",
+          "Platform 079",
+          "Platform 080",
+          "Platform 081",
+          "Platform 082",
+          "Platform 083",
+          "Platform 084",
+          "Platform 085",
+          "Platform 086",
+          "Platform 087",
+          "Platform 088",
+          "Platform 089",
+          "Platform 090",
+          "Platform 091",
+          "Platform 092",
+          "Platform 093",
+          "Platform 094",
+          "Platform 095",
+          "Platform 096",
+          "Platform 097",
+          "Platform 098",
+          "Platform 099",
+          "Platform 100",
+          "Platform 101",
+          "Platform 102",
+          "Platform 103",
+          "Platform 104",
+          "Platform 105",
+          "Platform 106",
+          "Platform 107",
+          "Platform 108",
+          "Platform 109",
+          "Platform 110",
+          "Platform 111",
+          "Platform 112",
+          "Platform 113",
+          "Platform 114",
+          "Platform 115",
+          "Platform 116",
+          "Platform 117",
+          "Platform 118",
+          "Platform 119"
+        ],
+        "collection": "Demo Platforms"
+      },
+      "property": "working_proxy",
+      "before": null,
+      "after": {
+        "ratio": 1.0
+      },
+      "reason": "Create a cached viewport stand-in; retain originals for rendering.",
+      "default_selected": false,
+      "temporary": true,
+      "measured_evidence": {
+        "source_mesh_objects": 120,
+        "source_evaluated_polygons": 720,
+        "source_modifiers": 0
+      },
+      "estimated_impact": "Fewer visible objects and/or less geometry evaluation; speed is unmeasured until benchmarked.",
+      "tradeoffs": [
+        "Use for Solid viewport work; material appearance and object picking can differ.",
+        "Originals remain in the file, so disk and memory usage may increase.",
+        "Proxy geometry is frozen. Restore before editing or animating the source scenery.",
+        "Reduction ratio targets triangles; actual polygon count is measured after creation."
+      ]
+    },
+    {
+      "id": "static_mesh_proxy:d6ec41427bd0cb11",
+      "kind": "static_mesh_proxy",
+      "target": {
+        "scene": "Scene",
+        "objects": [
+          "Heavy Static Scenery"
+        ]
+      },
+      "property": "working_proxy",
+      "before": null,
+      "after": {
+        "ratio": 0.5
+      },
+      "reason": "Create a cached viewport stand-in; retain originals for rendering.",
+      "default_selected": false,
+      "temporary": true,
+      "measured_evidence": {
+        "source_mesh_objects": 1,
+        "source_evaluated_polygons": 260096,
+        "source_modifiers": 2
+      },
+      "estimated_impact": "Fewer visible objects and/or less geometry evaluation; speed is unmeasured until benchmarked.",
+      "tradeoffs": [
+        "Use for Solid viewport work; material appearance and object picking can differ.",
+        "Originals remain in the file, so disk and memory usage may increase.",
+        "Proxy geometry is frozen. Restore before editing or animating the source scenery.",
+        "Reduction ratio targets triangles; actual polygon count is measured after creation."
+      ]
+    },
+    {
+      "id": "subdivision_viewport:2adcaf1b7c227f63",
+      "kind": "subdivision_viewport",
+      "target": {
+        "scene": "Scene",
+        "object": "Heavy Static Scenery",
+        "modifier": "Scenery Detail"
+      },
+      "property": "levels",
+      "before": 2,
+      "after": 1,
+      "reason": "Reduce viewport subdivision by one level; render_levels stays unchanged.",
+      "default_selected": true,
+      "temporary": false
+    },
+    {
+      "id": "hide_collection_viewport:5a9bdeeb36fe0632",
+      "kind": "hide_collection_viewport",
+      "target": {
+        "scene": "Scene",
+        "collection": "Demo Platforms",
+        "path": "Scene Collection/Demo Platforms"
+      },
+      "property": "hide_viewport",
+      "before": false,
+      "after": true,
+      "reason": "Temporary viewport isolation; only choose if this collection is not needed during the current task.",
+      "default_selected": false,
+      "temporary": true
+    },
+    {
+      "id": "hide_object_viewport:50e9dc455443242e",
+      "kind": "hide_object_viewport",
+      "target": {
+        "scene": "Scene",
+        "object": "Heavy Static Scenery"
+      },
+      "property": "hide_viewport",
+      "before": false,
+      "after": true,
+      "reason": "Temporary viewport isolation of a heavy object; only choose if it is not needed while working.",
+      "default_selected": false,
+      "temporary": true
+    }
+  ],
+  "options": {
+    "protected_objects": [
+      "Animated Actor - Protect Me"
+    ],
+    "protected_collections": [],
+    "proxy_ratio": 0.5,
+    "benchmark_after_apply": null
+  },
+  "proxy_exclusions": [
+    {
+      "object": "Animated Actor - Protect Me",
+      "reason": "protected object"
+    }
+  ],
+  "default_selected_change_ids": [
+    "subdivision_viewport:2adcaf1b7c227f63"
+  ],
+  "approval_required": true,
+  "notes": [
+    "Proxies and temporary hides are opt-in. Do not select a proxy and a hide/subdivision change for the same source.",
+    "Proxies require static local meshes, one view layer, and no unsupported dependencies. Excluded objects are listed with reasons.",
+    "Repeat the returned options exactly when applying. Optional trial benchmarks run before publishing the new copy.",
+    "A benchmark regression discards the trial. Inconclusive results may still produce a copy for manual viewport review.",
+    "Global use_simplify is off. BlendBoost does not enable it automatically because it can affect render output; viewport-only caps are offered when Simplify is already on."
+  ],
+  "no_fps_claim": "No playback or render benchmark has been run."
+}

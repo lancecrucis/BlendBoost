@@ -11,10 +11,8 @@ import tempfile
 import unittest
 
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-import tools  # noqa: E402
-import BlendBoost as plugin  # noqa: E402
+from plugin_loader import plugin
+tools = plugin.tools
 
 
 def sample_metrics():

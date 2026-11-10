@@ -1,0 +1,815 @@
+{
+  "ok": true,
+  "operation": "restore",
+  "source_file": "C:\\BlendBoostDemo\\demo_working.blend",
+  "output_file": "C:\\BlendBoostDemo\\demo_restored.blend",
+  "source_sha256": "c508bf40c4ad9c4fd8b7e2d00540fb4b1b13ca48b69265ef5576c03bd9569255",
+  "restore_id": "5378a5c8cb1099b2291c9f450d1f790d8f6dc04f88a9a9e245722383025aced8",
+  "restored_changes": [
+    {
+      "id": "static_collection_proxy:c5da42199b8e7235",
+      "kind": "static_collection_proxy",
+      "target": {
+        "scene": "Scene",
+        "objects": [
+          "Platform 000",
+          "Platform 001",
+          "Platform 002",
+          "Platform 003",
+          "Platform 004",
+          "Platform 005",
+          "Platform 006",
+          "Platform 007",
+          "Platform 008",
+          "Platform 009",
+          "Platform 010",
+          "Platform 011",
+          "Platform 012",
+          "Platform 013",
+          "Platform 014",
+          "Platform 015",
+          "Platform 016",
+          "Platform 017",
+          "Platform 018",
+          "Platform 019",
+          "Platform 020",
+          "Platform 021",
+          "Platform 022",
+          "Platform 023",
+          "Platform 024",
+          "Platform 025",
+          "Platform 026",
+          "Platform 027",
+          "Platform 028",
+          "Platform 029",
+          "Platform 030",
+          "Platform 031",
+          "Platform 032",
+          "Platform 033",
+          "Platform 034",
+          "Platform 035",
+          "Platform 036",
+          "Platform 037",
+          "Platform 038",
+          "Platform 039",
+          "Platform 040",
+          "Platform 041",
+          "Platform 042",
+          "Platform 043",
+          "Platform 044",
+          "Platform 045",
+          "Platform 046",
+          "Platform 047",
+          "Platform 048",
+          "Platform 049",
+          "Platform 050",
+          "Platform 051",
+          "Platform 052",
+          "Platform 053",
+          "Platform 054",
+          "Platform 055",
+          "Platform 056",
+          "Platform 057",
+          "Platform 058",
+          "Platform 059",
+          "Platform 060",
+          "Platform 061",
+          "Platform 062",
+          "Platform 063",
+          "Platform 064",
+          "Platform 065",
+          "Platform 066",
+          "Platform 067",
+          "Platform 068",
+          "Platform 069",
+          "Platform 070",
+          "Platform 071",
+          "Platform 072",
+          "Platform 073",
+          "Platform 074",
+          "Platform 075",
+          "Platform 076",
+          "Platform 077",
+          "Platform 078",
+          "Platform 079",
+          "Platform 080",
+          "Platform 081",
+          "Platform 082",
+          "Platform 083",
+          "Platform 084",
+          "Platform 085",
+          "Platform 086",
+          "Platform 087",
+          "Platform 088",
+          "Platform 089",
+          "Platform 090",
+          "Platform 091",
+          "Platform 092",
+          "Platform 093",
+          "Platform 094",
+          "Platform 095",
+          "Platform 096",
+          "Platform 097",
+          "Platform 098",
+          "Platform 099",
+          "Platform 100",
+          "Platform 101",
+          "Platform 102",
+          "Platform 103",
+          "Platform 104",
+          "Platform 105",
+          "Platform 106",
+          "Platform 107",
+          "Platform 108",
+          "Platform 109",
+          "Platform 110",
+          "Platform 111",
+          "Platform 112",
+          "Platform 113",
+          "Platform 114",
+          "Platform 115",
+          "Platform 116",
+          "Platform 117",
+          "Platform 118",
+          "Platform 119"
+        ],
+        "collection": "Demo Platforms"
+      },
+      "property": "working_proxy",
+      "before": null,
+      "after": {
+        "ratio": 1.0
+      },
+      "reason": "Create a cached viewport stand-in; retain originals for rendering.",
+      "default_selected": false,
+      "temporary": true,
+      "measured_evidence": {
+        "source_mesh_objects": 120,
+        "source_evaluated_polygons": 720,
+        "source_modifiers": 0
+      },
+      "estimated_impact": "Fewer visible objects and/or less geometry evaluation; speed is unmeasured until benchmarked.",
+      "tradeoffs": [
+        "Use for Solid viewport work; material appearance and object picking can differ.",
+        "Originals remain in the file, so disk and memory usage may increase.",
+        "Proxy geometry is frozen. Restore before editing or animating the source scenery.",
+        "Reduction ratio targets triangles; actual polygon count is measured after creation."
+      ],
+      "created": {
+        "collection": "BlendBoost Working Proxies",
+        "object": "BB Proxy Platform 000",
+        "state": {
+          "mesh": "BB Proxy Platform 000",
+          "geometry": "e0c4f71d54a115b4d554a0f00e43662c5a56f9a47934b120f1d14b31537bc892",
+          "matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "hide_render": true,
+          "hide_viewport": false,
+          "collections": [
+            "BlendBoost Working Proxies"
+          ],
+          "modifiers": 0,
+          "animated": false,
+          "parent": null,
+          "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "display_type": "TEXTURED",
+          "fake_user": false,
+          "vertex_groups": [],
+          "custom_properties": {
+            "blendboost_proxy_owner": "'static_collection_proxy:c5da42199b8e7235'"
+          },
+          "mesh_custom_properties": {
+            "blendboost_proxy_owner": "'static_collection_proxy:c5da42199b8e7235'"
+          },
+          "materials": [],
+          "shape_keys": false,
+          "mesh_animation": false,
+          "physics": false
+        }
+      },
+      "original_visibility": [
+        {
+          "object": "Platform 000",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 001",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 002",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 003",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 004",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 005",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 006",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 007",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 008",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 009",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 010",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 011",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 012",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 013",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 014",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 015",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 016",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 017",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 018",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 019",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 020",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 021",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 022",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 023",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 024",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 025",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 026",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 027",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 028",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 029",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 030",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 031",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 032",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 033",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 034",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 035",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 036",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 037",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 038",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 039",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 040",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 041",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 042",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 043",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 044",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 045",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 046",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 047",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 048",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 049",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 050",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 051",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 052",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 053",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 054",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 055",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 056",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 057",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 058",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 059",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 060",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 061",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 062",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 063",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 064",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 065",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 066",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 067",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 068",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 069",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 070",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 071",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 072",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 073",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 074",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 075",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 076",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 077",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 078",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 079",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 080",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 081",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 082",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 083",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 084",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 085",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 086",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 087",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 088",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 089",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 090",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 091",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 092",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 093",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 094",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 095",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 096",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 097",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 098",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 099",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 100",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 101",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 102",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 103",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 104",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 105",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 106",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 107",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 108",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 109",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 110",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 111",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 112",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 113",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 114",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 115",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 116",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 117",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 118",
+          "hide_viewport": false
+        },
+        {
+          "object": "Platform 119",
+          "hide_viewport": false
+        }
+      ],
+      "measured_result": {
+        "visible_source_objects_before": 120,
+        "visible_proxy_objects_after": 1,
+        "proxy_polygons": 720,
+        "original_meshes_modified": false
+      }
+    },
+    {
+      "id": "static_mesh_proxy:d6ec41427bd0cb11",
+      "kind": "static_mesh_proxy",
+      "target": {
+        "scene": "Scene",
+        "objects": [
+          "Heavy Static Scenery"
+        ]
+      },
+      "property": "working_proxy",
+      "before": null,
+      "after": {
+        "ratio": 0.5
+      },
+      "reason": "Create a cached viewport stand-in; retain originals for rendering.",
+      "default_selected": false,
+      "temporary": true,
+      "measured_evidence": {
+        "source_mesh_objects": 1,
+        "source_evaluated_polygons": 260096,
+        "source_modifiers": 2
+      },
+      "estimated_impact": "Fewer visible objects and/or less geometry evaluation; speed is unmeasured until benchmarked.",
+      "tradeoffs": [
+        "Use for Solid viewport work; material appearance and object picking can differ.",
+        "Originals remain in the file, so disk and memory usage may increase.",
+        "Proxy geometry is frozen. Restore before editing or animating the source scenery.",
+        "Reduction ratio targets triangles; actual polygon count is measured after creation."
+      ],
+      "created": {
+        "collection": "BlendBoost Working Proxies.001",
+        "object": "BB Proxy Heavy Static Scenery",
+        "state": {
+          "mesh": "BB Proxy Heavy Static Scenery.001",
+          "geometry": "b85452e06e8b605f65dce81d670260a63096f601d62cb295afeda6b5709bc336",
+          "matrix": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "hide_render": true,
+          "hide_viewport": false,
+          "collections": [
+            "BlendBoost Working Proxies.001"
+          ],
+          "modifiers": 0,
+          "animated": false,
+          "parent": null,
+          "color": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "display_type": "TEXTURED",
+          "fake_user": false,
+          "vertex_groups": [],
+          "custom_properties": {
+            "blendboost_proxy_owner": "'static_mesh_proxy:d6ec41427bd0cb11'"
+          },
+          "mesh_custom_properties": {
+            "blendboost_proxy_owner": "'static_mesh_proxy:d6ec41427bd0cb11'"
+          },
+          "materials": [],
+          "shape_keys": false,
+          "mesh_animation": false,
+          "physics": false
+        }
+      },
+      "original_visibility": [
+        {
+          "object": "Heavy Static Scenery",
+          "hide_viewport": false
+        }
+      ],
+      "measured_result": {
+        "visible_source_objects_before": 1,
+        "visible_proxy_objects_after": 1,
+        "proxy_polygons": 130048,
+        "original_meshes_modified": false
+      }
+    }
+  ],
+  "render_specific_settings_changed": false,
+  "fps_benchmarked": false,
+  "output_sha256": "4d1f1d55c6006706ab15e1a3016de35089b4b46d7a6617f39ccb1b36db6f7ebf"
+}

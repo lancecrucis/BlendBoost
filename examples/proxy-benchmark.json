@@ -1,0 +1,1103 @@
+{
+  "ok": true,
+  "report_version": 1,
+  "measurement_type": "headless_frame_evaluation",
+  "interactive_viewport_fps_measured": false,
+  "conditions": {
+    "frame_start": 1,
+    "frame_end": 10,
+    "frame_step": 1,
+    "sampled_frames": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "warmup_frames_per_run": 3,
+    "passes_per_run": 3,
+    "rounds": 2,
+    "run_order": [
+      [
+        "baseline",
+        "optimized"
+      ],
+      [
+        "optimized",
+        "baseline"
+      ]
+    ],
+    "blender_executable": "C:\\Blender\\blender.exe",
+    "same_host_and_executable": true,
+    "host_system": "Windows",
+    "cpu_count": 12,
+    "method": "time.perf_counter around scene.frame_set, evaluated dependency graph access, and visible mesh polygon readback"
+  },
+  "baseline": {
+    "ok": true,
+    "file": "C:\\BlendBoostDemo\\demo.blend",
+    "scene": "Scene",
+    "view_layer": "ViewLayer",
+    "blender_version": "5.2.3 LTS",
+    "samples": [
+      {
+        "pass_index": 1,
+        "frame": 1,
+        "elapsed_ms": 0.6787999991502147,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 2,
+        "elapsed_ms": 0.6614000003537512,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 3,
+        "elapsed_ms": 0.6665999999313499,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 4,
+        "elapsed_ms": 0.6476999997175881,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 5,
+        "elapsed_ms": 0.6492999991678516,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 6,
+        "elapsed_ms": 0.6435000004785252,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 7,
+        "elapsed_ms": 0.7419000003210385,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 8,
+        "elapsed_ms": 0.7778999997753999,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 9,
+        "elapsed_ms": 0.6863999997221981,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 10,
+        "elapsed_ms": 0.7170999997470062,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 1,
+        "elapsed_ms": 0.7680999997319304,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 2,
+        "elapsed_ms": 0.7193999999799416,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 3,
+        "elapsed_ms": 0.7540999995399034,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 4,
+        "elapsed_ms": 0.7780000005368493,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 5,
+        "elapsed_ms": 0.7830999993529986,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 6,
+        "elapsed_ms": 0.6862999998702435,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 7,
+        "elapsed_ms": 0.7510999994337908,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 8,
+        "elapsed_ms": 0.7013999993432662,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 9,
+        "elapsed_ms": 0.7200000000011642,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 10,
+        "elapsed_ms": 0.7291000001714565,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 1,
+        "elapsed_ms": 0.6221000003279187,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 2,
+        "elapsed_ms": 0.7404000007227296,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 3,
+        "elapsed_ms": 0.7535000004281756,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 4,
+        "elapsed_ms": 0.7290000003195019,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 5,
+        "elapsed_ms": 0.6896000004417147,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 6,
+        "elapsed_ms": 0.6174999998620478,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 7,
+        "elapsed_ms": 0.5989999999655993,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 8,
+        "elapsed_ms": 0.5970000001980225,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 9,
+        "elapsed_ms": 0.6069999999454012,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 10,
+        "elapsed_ms": 0.6017000005158479,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 1,
+        "elapsed_ms": 0.637799999822164,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 2,
+        "elapsed_ms": 0.6152000005386071,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 3,
+        "elapsed_ms": 0.6741999995938386,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 4,
+        "elapsed_ms": 0.6260000000111177,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 5,
+        "elapsed_ms": 0.6046999997124658,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 6,
+        "elapsed_ms": 0.5892000008316245,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 7,
+        "elapsed_ms": 0.584500000513799,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 8,
+        "elapsed_ms": 0.6994999994276441,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 9,
+        "elapsed_ms": 0.7392000006802846,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 10,
+        "elapsed_ms": 0.6468000001405017,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 1,
+        "elapsed_ms": 0.5873000000065076,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 2,
+        "elapsed_ms": 0.5906000005779788,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 3,
+        "elapsed_ms": 0.5873000000065076,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 4,
+        "elapsed_ms": 0.5879999998796848,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 5,
+        "elapsed_ms": 0.5879999998796848,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 6,
+        "elapsed_ms": 0.5886999997528619,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 7,
+        "elapsed_ms": 0.5864000004294212,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 8,
+        "elapsed_ms": 0.6136000001788489,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 9,
+        "elapsed_ms": 0.6915000003573368,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 10,
+        "elapsed_ms": 0.5879999998796848,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 1,
+        "elapsed_ms": 0.5851000005350215,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 2,
+        "elapsed_ms": 0.6546000004163943,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 3,
+        "elapsed_ms": 0.6968999996388447,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 4,
+        "elapsed_ms": 0.6444000000556116,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 5,
+        "elapsed_ms": 0.597800000832649,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 6,
+        "elapsed_ms": 0.5870000004506437,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 7,
+        "elapsed_ms": 0.5811000000903732,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 8,
+        "elapsed_ms": 0.60120000034658,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 9,
+        "elapsed_ms": 0.6047999995644204,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 10,
+        "elapsed_ms": 0.5882000004930887,
+        "visible_mesh_objects": 122,
+        "visible_evaluated_polygons": 260822,
+        "round_index": 2
+      }
+    ],
+    "statistics": {
+      "sample_count": 60,
+      "average_evaluation_ms": 0.6564,
+      "median_evaluation_ms": 0.6456,
+      "p95_evaluation_ms": 0.7681,
+      "p95_method": "nearest_rank",
+      "outlier_count_over_3x_median": 0,
+      "estimated_headless_evaluation_frames_per_second": 1523.3994
+    },
+    "typical_statistics": {
+      "method": "median of repeated samples for each frame, then average across frames",
+      "frame_count": 10,
+      "average_per_frame_median_ms": 0.6412,
+      "estimated_typical_headless_frames_per_second": 1559.4907
+    },
+    "file_sha256": "604580a08ee933f3f59310441d82a09bc6540baf6d35501f1c057a2a1d214b36"
+  },
+  "optimized": {
+    "ok": true,
+    "file": "C:\\BlendBoostDemo\\demo_working.blend",
+    "scene": "Scene",
+    "view_layer": "ViewLayer",
+    "blender_version": "5.2.3 LTS",
+    "samples": [
+      {
+        "pass_index": 1,
+        "frame": 1,
+        "elapsed_ms": 0.2604000001156237,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 2,
+        "elapsed_ms": 0.26499999967199983,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 3,
+        "elapsed_ms": 0.2694000004339614,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 4,
+        "elapsed_ms": 0.2572999992480618,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 5,
+        "elapsed_ms": 0.2709000000322703,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 6,
+        "elapsed_ms": 0.283800000033807,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 7,
+        "elapsed_ms": 0.28079999992769444,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 8,
+        "elapsed_ms": 0.26679999973566737,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 9,
+        "elapsed_ms": 0.2570999995441525,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 10,
+        "elapsed_ms": 0.2648999998200452,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 1,
+        "elapsed_ms": 0.25969999933295185,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 2,
+        "elapsed_ms": 0.2714000002015382,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 3,
+        "elapsed_ms": 0.27070000032836106,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 4,
+        "elapsed_ms": 0.28960000054212287,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 5,
+        "elapsed_ms": 0.3145000000586151,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 6,
+        "elapsed_ms": 0.3325000006952905,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 7,
+        "elapsed_ms": 0.3531000002112705,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 8,
+        "elapsed_ms": 0.29910000012023374,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 9,
+        "elapsed_ms": 0.2936000000772765,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 2,
+        "frame": 10,
+        "elapsed_ms": 0.38159999985509785,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 1,
+        "elapsed_ms": 0.340900000082911,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 2,
+        "elapsed_ms": 0.33660000008239876,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 3,
+        "elapsed_ms": 0.3378000001248438,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 4,
+        "elapsed_ms": 0.3285000002506422,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 5,
+        "elapsed_ms": 0.34330000016780104,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 6,
+        "elapsed_ms": 0.3372999999555759,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 7,
+        "elapsed_ms": 0.33259999963775044,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 8,
+        "elapsed_ms": 0.32809999993332895,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 9,
+        "elapsed_ms": 0.3432000003158464,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 3,
+        "frame": 10,
+        "elapsed_ms": 0.32620000001770677,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 1
+      },
+      {
+        "pass_index": 1,
+        "frame": 1,
+        "elapsed_ms": 0.31659999967814656,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 2,
+        "elapsed_ms": 0.31830000079935417,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 3,
+        "elapsed_ms": 0.2654999998412677,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 4,
+        "elapsed_ms": 0.3219999998691492,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 5,
+        "elapsed_ms": 0.2907999996750732,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 6,
+        "elapsed_ms": 0.2761999994618236,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 7,
+        "elapsed_ms": 0.25860000005195616,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 8,
+        "elapsed_ms": 0.27130000034958357,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 9,
+        "elapsed_ms": 0.2567999999882886,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 1,
+        "frame": 10,
+        "elapsed_ms": 0.2672000000529806,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 1,
+        "elapsed_ms": 0.257900000178779,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 2,
+        "elapsed_ms": 0.26059999981953297,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 3,
+        "elapsed_ms": 0.3156000002491055,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 4,
+        "elapsed_ms": 0.3406000005270471,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 5,
+        "elapsed_ms": 0.3237000000808621,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 6,
+        "elapsed_ms": 0.2690999999686028,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 7,
+        "elapsed_ms": 0.26279999929101905,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 8,
+        "elapsed_ms": 0.25920000007317867,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 9,
+        "elapsed_ms": 0.26109999998880085,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 2,
+        "frame": 10,
+        "elapsed_ms": 0.26059999981953297,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 1,
+        "elapsed_ms": 0.2647000001161359,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 2,
+        "elapsed_ms": 0.2598000000944012,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 3,
+        "elapsed_ms": 0.25939999977708794,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 4,
+        "elapsed_ms": 0.29770000037387945,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 5,
+        "elapsed_ms": 0.27940000018134015,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 6,
+        "elapsed_ms": 0.26590000015858095,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 7,
+        "elapsed_ms": 0.2585000002000015,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 8,
+        "elapsed_ms": 0.26810000053956173,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 9,
+        "elapsed_ms": 0.26140000045415945,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      },
+      {
+        "pass_index": 3,
+        "frame": 10,
+        "elapsed_ms": 0.25999999979831045,
+        "visible_mesh_objects": 3,
+        "visible_evaluated_polygons": 130774,
+        "round_index": 2
+      }
+    ],
+    "statistics": {
+      "sample_count": 60,
+      "average_evaluation_ms": 0.2904,
+      "median_evaluation_ms": 0.2714,
+      "p95_evaluation_ms": 0.3432,
+      "p95_method": "nearest_rank",
+      "outlier_count_over_3x_median": 0,
+      "estimated_headless_evaluation_frames_per_second": 3443.1112
+    },
+    "typical_statistics": {
+      "method": "median of repeated samples for each frame, then average across frames",
+      "frame_count": 10,
+      "average_per_frame_median_ms": 0.2762,
+      "estimated_typical_headless_frames_per_second": 3620.4337
+    },
+    "file_sha256": "c508bf40c4ad9c4fd8b7e2d00540fb4b1b13ca48b69265ef5576c03bd9569255"
+  },
+  "comparison": {
+    "average_evaluation_time_change_percent": -55.76,
+    "average_evaluation_time_reduction_percent": 55.76,
+    "median_evaluation_time_change_percent": -57.96,
+    "p95_evaluation_time_change_percent": -55.32,
+    "estimated_headless_throughput_change_percent": 126.02,
+    "typical_average_time_change_percent": -56.92,
+    "typical_average_time_reduction_percent": 56.92,
+    "raw_and_typical_direction_conflict": false,
+    "outlier_warning": false,
+    "reliability": "single-session estimate",
+    "interpretation": "lower headless evaluation time",
+    "verdict": "improvement",
+    "verdict_method": "At least two rounds, each agreeing in raw and typical direction, >=5% and >=0.1ms mean difference, no >3x-median outliers. Heuristic, not statistical significance.",
+    "per_round": [
+      {
+        "average_evaluation_time_change_percent": -56.3,
+        "average_evaluation_time_reduction_percent": 56.3,
+        "median_evaluation_time_change_percent": -57.38,
+        "p95_evaluation_time_change_percent": -54.61,
+        "estimated_headless_throughput_change_percent": 128.85,
+        "typical_average_time_change_percent": -57.64,
+        "typical_average_time_reduction_percent": 57.64,
+        "raw_and_typical_direction_conflict": false,
+        "outlier_warning": false,
+        "reliability": "single-session estimate",
+        "interpretation": "lower headless evaluation time"
+      },
+      {
+        "average_evaluation_time_change_percent": -55.15,
+        "average_evaluation_time_reduction_percent": 55.15,
+        "median_evaluation_time_change_percent": -55.68,
+        "p95_evaluation_time_change_percent": -53.72,
+        "estimated_headless_throughput_change_percent": 122.92,
+        "typical_average_time_change_percent": -55.88,
+        "typical_average_time_reduction_percent": 55.88,
+        "raw_and_typical_direction_conflict": false,
+        "outlier_warning": false,
+        "reliability": "single-session estimate",
+        "interpretation": "lower headless evaluation time"
+      }
+    ]
+  },
+  "plain_language_summary": "The original averaged 0.66 ms and the optimized copy averaged 0.29 ms per frame in the same headless test. The optimized copy took 55.76% less average evaluation time. This is not interactive viewport FPS.",
+  "limits": [
+    "Estimated throughput is 1000 / average headless evaluation milliseconds; it is not interactive viewport FPS.",
+    "Python object traversal and polygon readback are included in each timed sample; no display drawing or rendering is measured.",
+    "Multiple rounds alternate original/copy order to reduce order bias; cache, thermal, and background-load variation remain possible.",
+    "Raw statistics retain timing spikes. Typical statistics use the median of repeated samples per frame; neither is viewport FPS.",
+    "Only visible mesh objects in the chosen view layer are read back; generated instances and non-mesh drawing are not counted.",
+    "Frame changes occur only in memory; input .blend files are never saved."
+  ]
+}

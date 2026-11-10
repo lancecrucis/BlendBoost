@@ -127,7 +127,7 @@ def _scan_in_blender():
         raise ValueError(f"Scene not found: {scene_name}")
 
     # A scene override ensures evaluated geometry belongs to the requested scene.
-    with bpy.context.temp_override(scene=scene):
+    with bpy.context.temp_override(scene=scene, view_layer=scene.view_layers[0]):
         depsgraph = bpy.context.evaluated_depsgraph_get()
         objects = list(scene.objects)
         counts = {}
@@ -162,6 +162,8 @@ def _scan_in_blender():
                 "name": obj.name,
                 "base_polygons": base_polygons,
                 "evaluated_polygons": evaluated_polygons,
+                "visible_in_view_layer": obj.visible_get(view_layer=scene.view_layers[0]),
+                "is_blendboost_proxy": bool(obj.get("blendboost_proxy_owner")),
                 "modifiers": modifiers,
             })
 
@@ -177,6 +179,10 @@ def _scan_in_blender():
         "mesh_count": len(meshes),
         "base_polygon_count": base_total,
         "evaluated_polygon_count": evaluated_total,
+        "view_layer": scene.view_layers[0].name,
+        "visible_mesh_count": sum(row["visible_in_view_layer"] for row in meshes),
+        "visible_evaluated_polygon_count": sum(row["evaluated_polygons"] for row in meshes if row["visible_in_view_layer"]),
+        "generated_proxy_count": sum(row["is_blendboost_proxy"] for row in meshes),
         "modifier_count": sum(modifiers_by_type.values()),
         "modifier_counts_by_type": dict(sorted(modifiers_by_type.items())),
         "objects_with_modifiers": objects_with_modifiers,
@@ -221,7 +227,7 @@ def _collect_performance_metrics():
         raise ValueError(f"Scene not found: {scene_name}")
     active_screen = bpy.context.screen.name if bpy.context.screen else None
 
-    with bpy.context.temp_override(scene=scene):
+    with bpy.context.temp_override(scene=scene, view_layer=scene.view_layers[0]):
         depsgraph = bpy.context.evaluated_depsgraph_get()
         objects = list(scene.objects)
         mesh_rows = []
@@ -260,7 +266,8 @@ def _collect_performance_metrics():
                 "name": obj.name,
                 "base_polygons": base,
                 "evaluated_polygons": evaluated,
-                "hidden_from_viewport": bool(obj.hide_viewport or obj.hide_get()),
+                "hidden_from_viewport": not obj.visible_get(view_layer=scene.view_layers[0]),
+                "is_blendboost_proxy": bool(obj.get("blendboost_proxy_owner")),
                 "modifier_count": len(modifiers),
             })
 
@@ -491,6 +498,9 @@ def _build_performance_report(metrics):
             "mesh_count": len(meshes),
             "base_polygon_count": total_base,
             "evaluated_polygon_count": total_eval,
+            "visible_mesh_count": sum(not row["hidden_from_viewport"] for row in meshes),
+            "visible_evaluated_polygon_count": sum(row["evaluated_polygons"] for row in meshes if not row["hidden_from_viewport"]),
+            "generated_proxy_count": sum(row.get("is_blendboost_proxy", False) for row in meshes),
             "modifier_counts_by_type": dict(sorted(modifier_counts.items())),
             "heaviest_meshes": heaviest,
             "collections": metrics["collections"],
@@ -521,6 +531,7 @@ def _build_performance_report(metrics):
             "Severity is a threshold heuristic, not a measured frame-time, RAM, or VRAM benchmark.",
             "Evaluated polygons use the saved frame's viewport dependency graph for mesh objects; generated instances are not expanded.",
             "Polygon totals include hidden scene mesh objects; hiding alone does not remove their polygons from these totals.",
+            "Visible counts use the first saved view layer. Proxy copies retain originals, so total stored geometry can grow while visible geometry decreases.",
             "Image estimates exclude mipmaps, multiple buffers, tiled or animated frames, and actual GPU residency.",
             "Only saved 3D View settings are inspected; unsaved UI changes are not included.",
             "Heavy or hidden geometry is an optimization candidate, not proof it is unnecessary.",

@@ -51,13 +51,29 @@ _OPTIMIZE_INPUTS = {
         "type": "string",
         "description": "Absolute path for a new .blend copy in the same directory as the source. Must not already exist.",
     },
+    "protected_objects": {"type": "array", "items": {"type": "string"},
+                          "description": "Exact scene object names to leave untouched; default empty. Repeat preview options when applying."},
+    "protected_collections": {"type": "array", "items": {"type": "string"},
+                              "description": "Exact collection names; protects all descendants. Repeat preview options when applying."},
+    "proxy_ratio": {"type": "number", "minimum": 0.1, "maximum": 1,
+                    "description": "Triangle reduction target for heavy static mesh proxies; default 0.5. Use 1 for full-detail caching. Collection batches retain full geometry. Proxies are opt-in and may alter viewport appearance."},
+    "benchmark_after_apply": {"type": ["object", "null"], "additionalProperties": False,
+        "description": "Optional approved trial budget. Benchmarks the original and staged copy before publishing. Failures or consistent regressions discard the trial; inconclusive copies are labeled for manual review. Repeat these options from preview.",
+        "properties": {
+            "frame_start": {"type": "integer"}, "frame_end": {"type": "integer"},
+            "frame_step": {"type": "integer", "minimum": 1},
+            "warmup_frames": {"type": "integer", "minimum": 1, "maximum": 100},
+            "passes": {"type": "integer", "minimum": 2, "maximum": 10},
+            "rounds": {"type": "integer", "minimum": 2, "maximum": 4},
+            "timeout_seconds": {"type": "integer", "minimum": 10, "maximum": 900},
+        }, "required": ["frame_start", "frame_end"]},
 }
 
 PREVIEW_OPTIMIZATIONS = {
     "name": "preview_optimizations",
     "description": (
         "Read a saved Blender file and return a proposed viewport-only optimization plan, "
-        "plan ID, optional temporary changes, and restore information. Does not write files. "
+        "plan ID, opt-in static scenery proxies and collection batching, exclusions, and restore information. Does not write files. "
         "Review the proposal with the user before applying it."
     ),
     "parameters": {"type": "object", "properties": _OPTIMIZE_INPUTS, "required": ["blend_file"]},
@@ -74,7 +90,8 @@ APPLY_OPTIMIZATIONS = {
     "description": (
         "After the user reviews a preview, request Hermes human approval and write selected "
         "viewport-only changes to a NEW .blend copy. Requires the preview's plan_id and selected_change_ids. "
-        "Never overwrites a file or alters the original. No FPS improvement is claimed."
+        "Repeat the preview's options exactly. Can create viewport-only proxies retaining originals for rendering, "
+        "and optionally benchmark a staged copy. Never overwrites a file or alters the original. No viewport FPS improvement is claimed."
     ),
     "parameters": {
         "type": "object",
@@ -92,7 +109,7 @@ RESTORE_OPTIMIZATIONS = {
     "name": "restore_optimizations",
     "description": (
         "Request Hermes human approval and restore BlendBoost-changed viewport settings "
-        "from an optimized copy into a NEW .blend copy. Never overwrites the optimized copy."
+        "and remove only unedited BlendBoost-generated proxies from an optimized copy into a NEW .blend copy. Never overwrites the optimized copy."
     ),
     "parameters": {
         "type": "object",
@@ -135,6 +152,8 @@ BENCHMARK_PERFORMANCE = {
                               "description": "Number of untimed frame evaluations before measurements; defaults to 3."},
             "passes": {"type": "integer", "minimum": 1, "maximum": 10,
                        "description": "Complete timed passes over the frame range; defaults to 3 for outlier visibility."},
+            "rounds": {"type": "integer", "minimum": 1, "maximum": 4,
+                       "description": "Fresh-process rounds, alternating original/copy order. Default 1; use at least 2 for an improvement/regression verdict."},
             "timeout_seconds": {"type": "integer", "minimum": 10, "maximum": 900,
                                 "description": "Maximum seconds per Blender subprocess; defaults to 300."},
             "report_file": {"type": "string", "description": "Optional absolute path to a NEW .json report file; existing files are never overwritten."},

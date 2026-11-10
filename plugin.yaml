@@ -1,6 +1,6 @@
 name: blendboost
-version: 0.4.0
-description: Blender scene analyzer, approval-gated optimizer, and headless benchmark
+version: 0.5.0
+description: Reversible Blender working proxies, scene analysis, and measured optimization trials
 provides_tools:
   - scan_scene
   - analyze_performance

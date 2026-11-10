@@ -1,5 +1,8 @@
 """BlendBoost Hermes plugin registration."""
 
+import hashlib
+import json
+
 from . import schemas, tools
 
 
@@ -40,8 +43,10 @@ def _require_optimization_approval(tool_name: str, args: dict, task_id: str = ""
     rule_id = plan_id if isinstance(plan_id, str) and len(plan_id) == 64 else "invalid-plan"
     selected = args.get("selected_change_ids")
     change_count = len(selected) if isinstance(selected, list) else "restore"
+    approval_scope = hashlib.sha256(json.dumps(args, sort_keys=True, default=str).encode()).hexdigest()[:16]
+    trial = " Includes the previewed benchmark trial budget." if args.get("benchmark_after_apply") else ""
     return {
         "action": "approve",
-        "message": f"BlendBoost will write a NEW .blend copy at {destination} ({change_count} viewport changes). Approve only after reviewing this plan's preview.",
-        "rule_key": f"blendboost:{bare_name}:{rule_id}",
+        "message": f"BlendBoost will write a NEW .blend copy at {destination} ({change_count} viewport changes).{trial} Approve only after reviewing this plan's preview.",
+        "rule_key": f"blendboost:{bare_name}:{rule_id}:{approval_scope}",
     }

@@ -12,9 +12,9 @@ import unittest
 from unittest.mock import patch
 
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-import BlendBoost as plugin  # noqa: E402
-from BlendBoost import benchmark  # noqa: E402
+from plugin_loader import plugin
+import importlib
+benchmark = importlib.import_module(plugin.__name__ + ".benchmark")
 
 
 class BenchmarkUnitTests(unittest.TestCase):
